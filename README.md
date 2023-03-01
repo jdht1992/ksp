@@ -36,6 +36,11 @@ docker-compose exec web bash
 python manage.py migrate
 ```
 
+Usuario para ingresar 
+```sh
+username: usuario
+password: 1234
+```
 
 ## Rutas del proyecto
 ### Employee
@@ -43,57 +48,59 @@ python manage.py migrate
 Pagina principal
 ```sh
   localhost:8000
+  http://ec2-3-136-157-156.us-east-2.compute.amazonaws.com:8000/
 ```
 
 Login para acceder a las vistas
 ```sh
 
-http://127.0.0.1:8000/accounts/login/
+127.0.0.1:8000/accounts/login/
+http://ec2-3-136-157-156.us-east-2.compute.amazonaws.com:8000/accounts/login/
 
 ```
 
 Lista para poder ver todos los Employee
 ```sh
-http://127.0.0.1:8000/employee/list
+127.0.0.1:8000/employee/list
 ```
 
 Crear Employee
 ```sh
-http://127.0.0.1:8000/employee/create
+127.0.0.1:8000/employee/create
 ```
 
 Detalle del Employee
 ```sh
-http://127.0.0.1:8000/employee/detail/<employee_id>/
+127.0.0.1:8000/employee/detail/<employee_id>/
 ```
 
 Actualizar Employee
 ```sh
-http://127.0.0.1:8000/employee/update/<employee_id>
+127.0.0.1:8000/employee/update/<employee_id>
 ```
 
 Eliminar el Employee
 ```sh
-http://127.0.0.1:8000/employee/delete/<employee_id>
+127.0.0.1:8000/employee/delete/<employee_id>
 ```
 
 ### Beneficiary
 Crear beneficiario
 ```sh
-http://127.0.0.1:8000/beneficiary/create/<employee_id>
+127.0.0.1:8000/beneficiary/create/<employee_id>
 ```
 
 Detalle del beneficiario
 ```sh
-http://127.0.0.1:8000/beneficiary/detail/<beneficiary_id>
+127.0.0.1:8000/beneficiary/detail/<beneficiary_id>
 ```
 
 Actualizar beneficiario
 ```sh
-http://127.0.0.1:8000/beneficiary/update/<beneficiary_id>
+127.0.0.1:8000/beneficiary/update/<beneficiary_id>
 ```
 
 Eliminar beneficiario
 ```sh
-http://127.0.0.1:8000/beneficiary/delete/<beneficiary_id>
+127.0.0.1:8000/beneficiary/delete/<beneficiary_id>
 ```
