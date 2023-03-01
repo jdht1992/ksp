@@ -75,4 +75,4 @@ class BeneficiaryUpdateView(LoginRequiredMixin, UpdateView):
     fields = ('identifier', 'full_name', 'relationship', 'birthday', 'gender')
 
     def get_success_url(self):
-        return reverse_lazy('list_employee', pk=self.kwargs['pk'])
+        return reverse_lazy('list_employee')
