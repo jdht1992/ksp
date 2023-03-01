@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+{% block title %}List Employee{% endblock %}
+{% block content %}
+    <h1>List of Employee</h1>
+    <a href="{% url 'create_employee' %}">Create</a><br><br>
+
+    <table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Create Beneficiary</th>
+        <th>Beneficiary</th>
+    </tr>
+    {% for employee in employees %}
+        <tr>
+            <td><a href="{% url 'detail_employee' employee.pk %}">{{employee.pk}}</a></td>
+            <td>{{employee.full_name}}</td>
+            <td><a href="{% url 'update_employee' employee.pk %}">Edit</a></td>
+            <td><a href="{% url 'delete_employee' employee.pk %}">Delete</a></td>
+            <td><a href="{% url 'create_beneficiary' employee.pk %}">Create Beneficiary</a></td>
+            <td>
+                {% for beneficiary in employee.beneficiary_set.all %}
+                    <td><a href="{% url 'detail_beneficiary' beneficiary.pk %}">{{beneficiary}}</a></td>
+                {% endfor %}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

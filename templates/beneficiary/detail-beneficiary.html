@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% block title %}Detail beneficiary{% endblock %}
+{% block content %}
+
+    <h1>Detail beneficiary</h1>
+
+    <p>pk - {{beneficiary.pk}}</p>
+    <p>identifier - {{beneficiary.identifier}}</p>
+    <p>full_name - {{beneficiary.full_name}}</p>
+    <p>relationship - {{beneficiary.relationship}}</p>
+    <p>birthday - {{beneficiary.birthday}}</p>
+    <p>gender - {{beneficiary.gender}}</p>
+
+    <a href="{% url 'update_beneficiary' beneficiary.pk %}">Edit</a>
+    <a href="{% url 'delete_beneficiary' beneficiary.pk %}">Delete</a>
+{% endblock %}

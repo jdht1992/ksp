@@ -1,0 +1,9 @@
+{% extends '_base.html' %}
+{% block title %}Create Employee{% endblock %}
+{% block content %}
+    <h1>Create Employee</h1>
+    <form action="" enctype="multipart/form-data" method="POST">{% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}

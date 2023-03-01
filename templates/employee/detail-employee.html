@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+{% block title %}Detail employee{% endblock %}
+{% block content %}
+    <h1>Detail employee</h1>
+
+    <p>pk - {{employee.pk}}</p>
+    {% if employee.image %}
+        <td><img src="{{ employee.image.url }}"alt=""style="width:50px; height:50px;"></td>
+    {%else%}
+        <span>No image</span>
+    {%endif%}
+    <p>identifier - {{employee.identifier}}</p>
+    <p>full_name - {{employee.full_name}}</p>
+    <p>salary - {{employee.salary}}</p>
+    <p>job - {{employee.job}}</p>
+    <p>status - {{employee.status}}</p>
+    <p>date_hire - {{employee.date_hire}}</p>
+
+    {% for beneficiary in employee.beneficiary_set.all %}
+       <p>pk - {{beneficiary.pk}}</p>
+        <p>identifier - {{beneficiary.identifier}}</p>
+        <p>full_name - {{beneficiary.full_name}}</p>
+        <p>relationship - {{beneficiary.relationship}}</p>
+        <p>birthday - {{beneficiary.birthday}}</p>
+        <p>gender - {{beneficiary.gender}}</p>
+    {% endfor %}
+
+
+
+    <a href="{% url 'list_employee' %}">back</a>
+
+{% endblock %}
